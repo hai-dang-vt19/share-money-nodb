@@ -9,6 +9,7 @@ function input_member() {
     x.setAttribute("id", "inp");
     x.setAttribute("placeholder", "Nhập tên");
     x.setAttribute("name", "inp_name[]");
+    x.setAttribute('required', '');
     x.classList.add('form-control-inpm');
     x.classList.add('mb-3');
     document.getElementById('member').appendChild(x);
@@ -27,6 +28,7 @@ function input_chi() {
     x.setAttribute("id", "inp");
     x.setAttribute("placeholder", "Nhập tên");
     x.setAttribute("name", "inp_name[]");
+    x.setAttribute('required', '');
     x.classList.add('form-control-inpm');
     x.classList.add('mb-3');
     document.getElementById('member_chi').appendChild(x);
@@ -37,6 +39,7 @@ function input_chi() {
     y.setAttribute("placeholder", "Nhập số tiền chi");
     y.setAttribute("name", "inp_price[]");
     y.setAttribute("onblur", "findTotal()");
+    y.setAttribute('required', '');
     y.classList.add('form-control-inpm');
     y.classList.add('ms-3');
     document.getElementById('member_chi').appendChild(y);

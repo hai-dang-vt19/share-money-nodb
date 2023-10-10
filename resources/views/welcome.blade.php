@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cam pu chia</title>
+    <title>Chia tiền</title>
     <link rel="stylesheet" href="{{ asset('asset/styles.css') }}">
 </head>
 <body>
@@ -49,10 +49,11 @@
         <div class="container">
             <div class="card" id="card">
                 <div id="lst_member">
-                    <div class="head_input mb-3">
-                        <button id="new_input" type="button" class="btn btn-primary" onclick="input_member()">+ Đầu ăn</button>
-                        <button id="new_input" type="button" class="btn btn-primary" onclick="input_chi()">+ Đầu chi</button>
-                        <button id="a_Reset" type="button"  class="btn btn-reset"><a href="{{ route('index') }}">Reset</a></button>
+                    <div class="mb-1">
+                        <button type="button" class="btn btn-primary" onclick="input_member()">+ Đầu ăn</button>
+                        <button type="button" class="btn btn-primary" onclick="input_chi()">+ Đầu chi</button>
+                        <button type="button" class="btn btn-outline-danger" onclick="remove_dauan()" title="Đúp 2 lần xóa từ ô cuối cùng">-&ensp;Đầu ăn</button>
+                        <button id="a_Reset" type="button"  class="btn-sm btn-reset"><a href="{{ route('index') }}">Reset</a></button>
                     </div>
                     <input type="hidden" id="inp_qlty_num" name="inp_qlty_num" value="@if (!empty($count)){{$count}}@endif">
                     <input type="hidden" id="total" name="total" value="@if (!empty($count)){{$data['total']}}@endif">
@@ -79,7 +80,7 @@
                     </div>
                 </div>
                 <div class="div__submit">
-                    <button class="btn btn-success">Submit</button>
+                    <button class="btn btn-success" type="submit">Submit</button>
                 </div>   
                 @if (!empty($count))
                     <div class="div__table">
@@ -171,6 +172,15 @@
                 currency: 'VND',
             });
             document.getElementById('span_total').innerHTML = VND.format(tot);
+        }
+    </script>
+    <script>
+        function remove_dauan() {
+            let lst_mem = document.getElementById("member");
+            lst_mem.removeChild(lst_mem.lastElementChild);
+
+            let count = document.querySelectorAll("input[type=text]").length;    
+            document.getElementById('inp_qlty_num').value = count;
         }
     </script>
     <script src="{{ asset('asset/main.js') }}"></script>

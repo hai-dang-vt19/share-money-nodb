@@ -80,6 +80,14 @@ body{
     border-radius: 3px;
     padding: 4px 10px 4px 10px;
     cursor: pointer;
+    outline: none;
+}
+.btn-sm {
+    border: none;
+    border-radius: 3px;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+    outline: none;
 }
 .btn-primary { border: 0.5px solid var(--primary-color);background-color: var(--primary-color); color: var(--white-color); }
 .btn-primary:hover { border: 0.5px solid var(--primary-color);background-color: var(--white-color); color: var(--primary-color); transition: 0.5;}
@@ -208,13 +216,6 @@ body{
     width: 100%;
     padding: 2px 5px 0px 5px;
 }
-
-.head_input{
-    display: flex;
-}
-#new_input{
-    margin: 5px 0px 0px 5px;
-}
 #lst_member{
     margin: 5px 0px 5px 0px;
 }
@@ -257,6 +258,7 @@ body{
     text-decoration: none;
     color: #ffffff;
 }
+
 .div__table{
     margin: 0px 0px 0px 10px;
     padding: 5px 5px 5px 5px;
